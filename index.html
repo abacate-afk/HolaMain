@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HolaMain</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 200vh;
+    background: radial-gradient(circle at center, #1a1f3a, #05060a);
+    color: white;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    width: 320px;
+    height: 200px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #1c1f2e, #0c0d14);
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    gap: 20px;
+    transition: transform 0.2s ease-out;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 0 60px rgba(120,140,255,0.3);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffb347, #ff7a18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #cfd4ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+    <a href="https://abacate-afk.github.io/Loadstring-Site-HolaMain-/" target="_blank">
+        <div class="card" id="card">
+            <div class="icon">🔒</div>
+            <div class="title">Hola Loadstring</div>
+        </div>
+    </a>
+</div>
+
+<script>
+const card = document.getElementById("card");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+    let rotate = scrollY * 0.2;
+
+    card.style.transform = `
+        rotateX(${rotate}deg)
+        rotateY(${rotate}deg)
+    `;
+});
+</script>
+
+</body>
+</html>
