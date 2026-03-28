@@ -24,6 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px; /* espaço entre os botões */
 }
 
 a {
@@ -72,25 +73,38 @@ a {
 <body>
 
 <div class="section">
+
+    <!-- BOTÃO ORIGINAL -->
     <a href="https://abacate-afk.github.io/Loadstring-Site-HolaMain-/" target="_blank">
-        <div class="card" id="card">
+        <div class="card">
             <div class="icon">🔒</div>
             <div class="title">Hola Loadstring</div>
         </div>
     </a>
+
+    <!-- NOVO BOTÃO -->
+    <a href="https://abacate-afk.github.io/Hola-obfuscator/" target="_blank">
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <div class="title">Hola Obsfucator</div>
+        </div>
+    </a>
+
 </div>
 
 <script>
-const card = document.getElementById("card");
+const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {
     let scrollY = window.scrollY;
     let rotate = scrollY * 0.2;
 
-    card.style.transform = `
-        rotateX(${rotate}deg)
-        rotateY(${rotate}deg)
-    `;
+    cards.forEach(card => {
+        card.style.transform = `
+            rotateX(${rotate}deg)
+            rotateY(${rotate}deg)
+        `;
+    });
 });
 </script>
 
